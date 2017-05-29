@@ -20,6 +20,8 @@
 							echo "<h1 style='color: green;'>new user registered successfully!</h1>";
 						} else if ($_GET['status'] == 'login_fail') {
 							echo "<h1 style='color: red;'>invalid username and/or password!</h1>";
+						} else {
+							echo "Error occured";
 						}
 					}
 					loginform();

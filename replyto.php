@@ -30,7 +30,7 @@
 			<p>Welcome to the Sports Forum!</p>
 			<?php
 				if (!isset($_SESSION['username'])) {
-					echo "<p>please login first or <a href='/forum/register'>click here</a> to register.</p>";
+					echo "<p>please login first or <a href='/forum/register.html'>click here</a> to register.</p>";
 				}
 			?>
 		</div>

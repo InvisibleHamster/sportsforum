@@ -7,6 +7,6 @@
 	$insert = mysqli_query($con, "INSERT INTO users (`username`, `password`) VALUES ('".$newuser."', '".$newpwd."');");
 	
 	if ($insert) {
-		header("Location: /forum/reg-success");
+		header("Location: /forum/index.php?status=reg-success");
 	}
 ?>

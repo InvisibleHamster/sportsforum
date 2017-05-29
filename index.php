@@ -2,6 +2,7 @@
 	include ('layout_manager.php');
 	include ('content_function.php');
 ?>
+
 <html>
 <head><title>Discuss about sports</title></head>
 <link href="/forum/styles/main.css" type="text/css" rel="stylesheet" />

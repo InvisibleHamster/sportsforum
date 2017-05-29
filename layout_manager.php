@@ -11,7 +11,7 @@
 	}
 	
 	function logout() {
-		echo nl2br("<p>Welcome ".$_SESSION['username']."!\nLooking good today!</p>
+		echo nl2br("<p>Welcome ".$_SESSION['username']."!\nNice to see you back!</p>
 				<form action='/forum/logout.php' method='GET'>
 				<input type='submit' value='Logout' /></form>");
 	}

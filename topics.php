@@ -26,11 +26,11 @@
 			?>
 		</div>
 		<div class="forumdesc">
-			<p>Test the topic!</p>
+			<p>Welcome to the Sports Forum!</p>
 		</div>
 		<?php
 			if (isset($_SESSION['username'])) {
-				echo "<div class='content'><p><a href='/forum/newtopic/".$_GET['cid']."/".$_GET['scid']."'>
+				echo "<div class='content'><p><a href='/forum/newtopic.php?cid=".$_GET['cid']."&scid=".$_GET['scid']."'>
 					  add new topic</a></p></div>";
 			}
 		?>

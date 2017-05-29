@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 18, 2017 at 03:36 AM
+-- Generation Time: May 29, 2017 at 02:53 AM
 -- Server version: 10.1.21-MariaDB
 -- PHP Version: 5.6.30
 
@@ -36,7 +36,9 @@ CREATE TABLE `categories` (
 --
 
 INSERT INTO `categories` (`cat_id`, `category_title`) VALUES
-(1, 'Testing Category 1');
+(1, 'Testing Category for Jasper'),
+(2, 'Test Category for Jared'),
+(3, 'Test Category for Anush');
 
 -- --------------------------------------------------------
 
@@ -72,7 +74,8 @@ CREATE TABLE `subcategories` (
 --
 
 INSERT INTO `subcategories` (`subcat_id`, `parent_id`, `subcategory_title`, `subcategory_desc`) VALUES
-(2, 1, 'Testing Subcategory 1.1', 'for testing');
+(3, 1, 'More Testing for posts', 'The test category 1'),
+(4, 1, 'More Testing for works', 'The test category 2');
 
 -- --------------------------------------------------------
 
@@ -88,15 +91,9 @@ CREATE TABLE `topics` (
   `title` varchar(128) NOT NULL,
   `content` text NOT NULL,
   `date_posted` date NOT NULL,
-  `views` int(5) UNSIGNED NOT NULL
+  `views` int(5) UNSIGNED NOT NULL,
+  `replies` int(3) UNSIGNED NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `topics`
---
-
-INSERT INTO `topics` (`topic_id`, `category_id`, `subcategory_id`, `author`, `title`, `content`, `date_posted`, `views`) VALUES
-(1, 1, 2, '', 'testing topic 1', 'for testing purpose 1', '0000-00-00', 0);
 
 -- --------------------------------------------------------
 
@@ -109,14 +106,6 @@ CREATE TABLE `users` (
   `username` varchar(16) NOT NULL,
   `password` varchar(64) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `users`
---
-
-INSERT INTO `users` (`user_id`, `username`, `password`) VALUES
-(2, '123', '123'),
-(3, '', '');
 
 --
 -- Indexes for dumped tables
@@ -157,7 +146,8 @@ ALTER TABLE `topics`
 -- Indexes for table `users`
 --
 ALTER TABLE `users`
-  ADD PRIMARY KEY (`user_id`);
+  ADD PRIMARY KEY (`user_id`),
+  ADD UNIQUE KEY `username` (`username`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -167,22 +157,27 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `categories`
 --
 ALTER TABLE `categories`
-  MODIFY `cat_id` int(3) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `cat_id` int(3) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+--
+-- AUTO_INCREMENT for table `replies`
+--
+ALTER TABLE `replies`
+  MODIFY `reply_id` int(3) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 --
 -- AUTO_INCREMENT for table `subcategories`
 --
 ALTER TABLE `subcategories`
-  MODIFY `subcat_id` int(3) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `subcat_id` int(3) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT for table `topics`
 --
 ALTER TABLE `topics`
-  MODIFY `topic_id` int(8) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `topic_id` int(8) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `user_id` int(8) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `user_id` int(8) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 --
 -- Constraints for dumped tables
 --
